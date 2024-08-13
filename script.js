@@ -1,3 +1,8 @@
+document.addEventListener("DOMContentLoaded", () => {
+  const input = document.querySelector("#fruit"); // Select the input element with the ID "fruit"
+  input.value = ""; // Clear the input field's value
+});
+
 const input = document.querySelector("#fruit"); // Select the input element with the ID "fruit" and assign it to the variable 'input'
 const suggestions = document.querySelector(".suggestions ul"); // Select the <ul> element inside the element with the class "suggestions" and assign it to the variable 'suggestions'
 
