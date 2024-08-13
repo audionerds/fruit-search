@@ -4,7 +4,7 @@ document.addEventListener("DOMContentLoaded", () => {
 });
 
 const input = document.querySelector("#fruit"); // Select the input element with the ID "fruit" and assign it to the variable 'input'
-const suggestions = document.querySelector(".suggestions ul"); // Select the <ul> element inside the element with the class "suggestions" and assign it to the variable 'suggestions'
+const suggestions = document.querySelector(".suggestions ul"); // Select the ul inside the element with the class "suggestions" and assign it to the variable 'suggestions'
 
 const fruit = [
   "Apple 🍎",
@@ -94,9 +94,11 @@ function search(str) {
     console.log("Search string is empty"); // Log a message indicating the search string is empty
     return []; // Return an empty array since there are no results
   }
-  const filteredResults = fruit.filter((item) =>
-    item.toLowerCase().includes(str.toLowerCase())
-  ); // Filter the 'fruit' array to include only the elements matching the search query then converts the current fruit name to lowercase and check if it includes the query string
+
+  // Filter the 'fruit' array to include only those elements that match the search string 'str
+  const filteredResults = fruit.filter((f) =>
+    f.toLowerCase().includes(str.toLowerCase())
+  ); // Convert both the fruit name and the search string to lowercase for case-insensitive comparison
   console.log("Filtered results:", filteredResults); // Log the filtered results
   return filteredResults; // Return the filtered results
 }
@@ -108,8 +110,8 @@ function searchHandler(e) {
   showSuggestions(results, inputVal); // Call the showSuggestions function to display the search results
 }
 
-function showSuggestions(results, _inputVal) {
-  // Select the <ul> element inside the element with the class "suggestions"
+function showSuggestions(results) {
+  // Select the ul inside the element with the class "suggestions"
   const suggestions = document.querySelector(".suggestions ul");
 
   // Check if the suggestions element exists
@@ -135,7 +137,7 @@ function showSuggestions(results, _inputVal) {
 }
 
 function hideSuggestions() {
-  const suggestionsList = document.querySelector(".suggestions ul"); // Select the <ul> element inside the element with the class "suggestions"
+  const suggestionsList = document.querySelector(".suggestions ul"); // Select the ul inside the element with the class "suggestions"
 
   suggestionsList.style.display = "none"; // Hide the suggestions list by setting its display style to "none"
 }
