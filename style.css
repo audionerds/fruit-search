@@ -1,0 +1,72 @@
+* {
+  box-sizing: border-box; /* Apply box-sizing: border-box to all elements */
+}
+
+:focus {
+ outline: none; /* Remove outline from focused elements */
+}
+
+body {          
+  display: flex; /* Use flexbox for layout */
+  justify-content: center; /* Center content horizontally */
+  align-items: center; /* Center content vertically */
+  height: 100vh; /* Full viewport height */
+  font-family: Arial, Helvetica, sans-serif; /* Set font family */
+  margin: 0; /* Remove default margin */
+  padding: 0; /* Remove default padding */
+  background: linear-gradient(to right, rgb(255, 200, 0), rgb(255, 98, 0)); /* Gradient background */
+}
+
+input {     
+ width: 100%;     /* Full width */
+ padding: 10px;   /* Padding inside the input */ 
+ font-size: 16px; /* Font size */
+ border: 1px solid #e6a204; /* Border color */
+ border-radius: 4px; /* Rounded corners */
+ 
+}
+.search-container input[type="text"] {  /* Style the text input inside the search container */
+  background-color: rgba(255, 255, 255, 0.2); /* White background with 20% opacity */
+  color: #000;      /* Ensure text color is fully visible */
+  padding: 10px;      /* Padding inside the input */
+  border: 1px solid #ff4400;  /* Border color */
+  border-radius: 4px; /* Rounded corners */
+  width: 100%;        /* Full width */
+  box-sizing: border-box;   /* Include padding and border in the element's total width and height */
+}
+.search-container {  
+ position: relative; /* Position relative for absolute positioning of suggestions */
+ width: 300px;       /* Fixed width */
+ margin: 0;          /* Remove default margin */
+ 
+}
+
+.search-container .suggestions {
+  width: 100% /* Ensure the suggestions container takes full width */
+}
+
+.suggestions {
+   position: absolute; /* Position absolutely within the search container */
+   top: 100%;     /* Position below the input */
+   left: 0;       /* Align to the left */
+   right: 0;      /* Align to the right */
+   border: 1px solid #ea7e04;  /* Border color */
+   border-top: none; /* Remove top border */
+     background-color: rgba(255, 255, 255, 0.2); /* Match the search bar background */
+   z-index: 1000;   /* Ensure it appears above other elements */
+   display: block;  /* Display as block */
+}
+
+.suggestions ul {
+  list-style-type: none; /* Remove default list style */
+  padding: 0; /* Remove default padding */
+  margin: 0; /* Remove default margin */
+}
+.suggestion-item{
+  padding: 10px;   /* Padding inside each suggestion item */
+  cursor: pointer; /* Change cursor to pointer on hover */
+}
+
+.suggestion-item:hover {
+  background-color: rgb(255, 89, 6); /* Change background color on hover */
+}
